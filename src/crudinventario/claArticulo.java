@@ -13,13 +13,13 @@ public class claArticulo {
   //Atributo que necesito que tenga el objeto atributo 
     private String Codigo;
     private String Descripcion;
-    private String Precio;
+    private Double Precio;
     
    //constructor 
     public claArticulo(String Codigo, String Descripcion, Double precio){
         this.Codigo = Codigo; 
-        this.Descripcion - Descripcion;
-        this.Precio - Precio;
+        this.Descripcion = Descripcion;
+        this.Precio = precio;
     }
     
     // Imprimir en consola los datos del articulo 
@@ -29,7 +29,14 @@ public class claArticulo {
     }
     
     //Guardar informacion 
-    public void Guardar(){
+    public void guardar(){
+        // Instanciado a la clase de MODELO
+        mArticulo article = new mArticulo ();
+        // Enviamos la cadena de texto para guardar en el archivo
+        article.insertar(this.aTexto());
+        
         System.out.println(this.aTexto());
+    }
+}
 
 
