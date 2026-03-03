@@ -39,6 +39,7 @@ public class frmMain extends javax.swing.JFrame {
         jLabel1.setText("Selecciona una opcion");
 
         btnClientes.setText("Clientes");
+        btnClientes.addActionListener(this::btnClientesActionPerformed);
 
         btnInventario.setText("Inventarios");
         btnInventario.addActionListener(this::btnInventarioActionPerformed);
@@ -77,6 +78,11 @@ public class frmMain extends javax.swing.JFrame {
         frmArticulo2 fArticulo = new frmArticulo2();
         fArticulo.setVisible(true);
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        frmCliente fCliente = new frmCliente();
+        fCliente.setVisible(true);
+    }//GEN-LAST:event_btnClientesActionPerformed
 
     /**
      * @param args the command line arguments

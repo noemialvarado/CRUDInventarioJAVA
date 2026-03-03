@@ -38,7 +38,7 @@ public class mArticulo {
         }
    }     
     
-    public void consultar(){
+    public ArrayList<String>  consultar(){
         //variable donde se guarda los registros de mi archivo 
         ArrayList<String> listaRegistros = new ArrayList <>();
         
@@ -48,7 +48,7 @@ public class mArticulo {
             String linea;
             while ((linea = br.readLine()) != null){
               // separa el dato guardado por un caracter especial
-              String[] datos = linea.split("|");
+              String[] datos = linea.split("\\|");
               //crea un String formateando como lo necesitas 
               String datoBonito = "Codigo: " + datos[0] + "Descripcion: " + datos[1] + " Precio: " + datos[2];
               //Agrega el registro a el listado de datos 
@@ -61,7 +61,7 @@ public class mArticulo {
             System.out.println("Mensaje de error" + e.getMessage());
             listaRegistros.add("Error al cargar los datos");
         }
-        System.out.println(listaRegistros);
+        return listaRegistros;
     }
     
 }
