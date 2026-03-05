@@ -50,7 +50,7 @@ public class mArticulo {
               // separa el dato guardado por un caracter especial
               String[] datos = linea.split("\\|");
               //crea un String formateando como lo necesitas 
-              String datoBonito = "Codigo: " + datos[0] + "Descripcion: " + datos[1] + " Precio: " + datos[2];
+              String datoBonito = "Codigo: " + datos[0] + "| Descripcion: " + datos[1] + "| Precio: " + datos[2];
               //Agrega el registro a el listado de datos 
               listaRegistros.add(datoBonito);
                
