@@ -35,6 +35,10 @@ public class claArticulo {
         return articulo;
     }
     
+    public String getDescripcion(){
+        return this.Descripcion;
+    }
+    
     //Guardar informacion 
     public void guardar(){
         // Instanciado a la clase de MODELO
@@ -62,9 +66,28 @@ public class claArticulo {
     return modelLista;  
 }
     
+    public void actualizar(String newCodigo, String newDescripcion, String newPrecio){
+        
+        //Generamos la nueva linea del registro
+        String nuevaLinea = newCodigo + "|" + newDescripcion + "|" + newPrecio;
+        String lineaOriginal = this.Codigo.trim() + "|" + this.Descripcion.trim() + "|" + this.Precio;
+        //Inprimir los nuevos valores
+        System.out.println("Nuevo valores:" + nuevaLinea);
+        System.out.println("Valores Originales:" + lineaOriginal);
+        //solicita la actualizacion del registro
+        mArticulo mArticule = new mArticulo();
+        mArticule.update(lineaOriginal, nuevaLinea, "listado_articulos.txt");
+        
+    }
     
+
+
+    public void eliminar(){
+        //Registro a eliminar
+        String lineaOriginal = this.Codigo + "|" + this.Descripcion + "|" + this.Precio;
+        System.out.println("valores Originales:" + lineaOriginal);
+        // solicita la actualizacion del registro 
+        mArticulo mArticule = new mArticulo();
+        mArticule.delete(lineaOriginal, "listado_articulos.txt");
+    }
 }
-
-
-
-

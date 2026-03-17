@@ -1,7 +1,4 @@
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
-560|desarmador de cruz|200.0
+560|desarmador de cruz|270.0560
+910|pizarron|250.0
+920|telefono|7500.0
+540|mesa|630.0500|pulsera|69.0
