@@ -80,7 +80,7 @@ public class frmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
-        frmCliente fCliente = new frmCliente();
+        frmCliente3 fCliente = new frmCliente3();
         fCliente.setVisible(true);
     }//GEN-LAST:event_btnClientesActionPerformed
 
