@@ -67,6 +67,12 @@ public class frmCliente3 extends javax.swing.JFrame {
         txtnombre = new javax.swing.JTextField();
         txtrazonsocial = new javax.swing.JTextField();
         txttipocliente = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmiImportar = new javax.swing.JMenuItem();
+        jmiExportar = new javax.swing.JMenuItem();
+        jmiGenerarReporte = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -311,6 +317,26 @@ public class frmCliente3 extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
+        jMenu1.setText("Archivo");
+
+        jmiImportar.setText("Importar CSV");
+        jmiImportar.addActionListener(this::jmiImportarActionPerformed);
+        jMenu1.add(jmiImportar);
+
+        jmiExportar.setText("Exportar JSON");
+        jMenu1.add(jmiExportar);
+
+        jmiGenerarReporte.setText("Generar Reporte PDF");
+        jmiGenerarReporte.addActionListener(this::jmiGenerarReporteActionPerformed);
+        jMenu1.add(jmiGenerarReporte);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Informacion");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -396,6 +422,24 @@ public class frmCliente3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void jmiGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiGenerarReporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiGenerarReporteActionPerformed
+
+    private void jmiImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiImportarActionPerformed
+        //Muestra un cuadro de dialogo preguntando si deseamos eliminar
+        int respuesta = JOptionPane.showConfirmDialog(this,
+                "Es importante que el archivo a importar tenga el nombre "+ 
+                        "clientes.csv y se encuentre en la raiz del proyecto",
+                "Importacion de Datos desde archivo CSV",
+            JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        //Si la respuesta es SI comienza a eliminar el registro 
+        if(respuesta ==JOptionPane.YES_OPTION){
+            clsCsv cCsv = new clsCsv ();
+            cCsv.importarClientes();
+        }
+    }//GEN-LAST:event_jmiImportarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -439,12 +483,18 @@ public class frmCliente3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JMenuItem jmiExportar;
+    private javax.swing.JMenuItem jmiGenerarReporte;
+    private javax.swing.JMenuItem jmiImportar;
     private javax.swing.JLabel lblNombre2;
     private javax.swing.JLabel lblRazonSocial2;
     private javax.swing.JLabel lblTipoCliente2;

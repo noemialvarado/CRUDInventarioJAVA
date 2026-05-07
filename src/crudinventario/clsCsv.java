@@ -16,6 +16,7 @@ public class clsCsv {
     
     //Atributo de el objeto csv2
     String archivo = "inventario2.1.csv";
+    String archivo2 = "clientes.csv";
     
     //Metodo de el objeto csv2
     public void importarDatos(){
@@ -39,5 +40,27 @@ public class clsCsv {
             }
         
     }
+  
     
+     public void importarClientes(){
+        try(BufferedReader br = new BufferedReader ( new FileReader(archivo2))){
+            br.readLine(); //Salta la primera linea   
+            String linea;
+        
+        while ((linea = br.readLine()) !=null){
+       
+            String[] datos = linea.split(",");
+            // asignacion de valores para insertar datos.
+            claCliente cCliente = new claCliente(datos[0], datos[1],
+                datos[2], datos[3]);
+            //Almacena en archivo txt 
+            cCliente.guardar();
+            }
+        br.close();
+        System.out.println("se ha terminado con la importacion :");
+    }catch(IOException e){
+        System.out.println("Mensaje de error" + e.getMessage());
+    }
+        
+    }
 }
